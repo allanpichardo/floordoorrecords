@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Toolbar.css';
-import logo from '../data/img/floordoor_logo.svg';
+import logo from '../img/floordoor_logo.svg';
 
 export default class Toolbar extends Component {
 
