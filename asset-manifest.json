@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/floordoorrecords/static/css/main.e1cb5e52.chunk.css",
-    "main.js": "/floordoorrecords/static/js/main.56368100.chunk.js",
-    "main.js.map": "/floordoorrecords/static/js/main.56368100.chunk.js.map",
-    "runtime-main.js": "/floordoorrecords/static/js/runtime-main.c3dcaddf.js",
-    "runtime-main.js.map": "/floordoorrecords/static/js/runtime-main.c3dcaddf.js.map",
-    "static/js/2.2ec46614.chunk.js": "/floordoorrecords/static/js/2.2ec46614.chunk.js",
-    "static/js/2.2ec46614.chunk.js.map": "/floordoorrecords/static/js/2.2ec46614.chunk.js.map",
-    "index.html": "/floordoorrecords/index.html",
-    "precache-manifest.740e8a3fc58822c20b4e5c5100f54fee.js": "/floordoorrecords/precache-manifest.740e8a3fc58822c20b4e5c5100f54fee.js",
-    "service-worker.js": "/floordoorrecords/service-worker.js",
-    "static/css/main.e1cb5e52.chunk.css.map": "/floordoorrecords/static/css/main.e1cb5e52.chunk.css.map",
-    "static/js/2.2ec46614.chunk.js.LICENSE": "/floordoorrecords/static/js/2.2ec46614.chunk.js.LICENSE",
-    "static/media/floordoor_logo.svg": "/floordoorrecords/static/media/floordoor_logo.222aeaaf.svg"
+    "main.css": "/static/css/main.e1cb5e52.chunk.css",
+    "main.js": "/static/js/main.3af63ab8.chunk.js",
+    "main.js.map": "/static/js/main.3af63ab8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9e38c611.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9e38c611.js.map",
+    "static/js/2.2ec46614.chunk.js": "/static/js/2.2ec46614.chunk.js",
+    "static/js/2.2ec46614.chunk.js.map": "/static/js/2.2ec46614.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8fb1a90a0fc2a277b185041432ffa79c.js": "/precache-manifest.8fb1a90a0fc2a277b185041432ffa79c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e1cb5e52.chunk.css.map": "/static/css/main.e1cb5e52.chunk.css.map",
+    "static/js/2.2ec46614.chunk.js.LICENSE": "/static/js/2.2ec46614.chunk.js.LICENSE",
+    "static/media/floordoor_logo.svg": "/static/media/floordoor_logo.222aeaaf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c3dcaddf.js",
+    "static/js/runtime-main.9e38c611.js",
     "static/js/2.2ec46614.chunk.js",
     "static/css/main.e1cb5e52.chunk.css",
-    "static/js/main.56368100.chunk.js"
+    "static/js/main.3af63ab8.chunk.js"
   ]
 }
