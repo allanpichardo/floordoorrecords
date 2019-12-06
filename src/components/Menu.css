@@ -1,0 +1,48 @@
+.Menu {
+    display: grid;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--secondary-bg-color);
+    width: 0;
+    transition: width 0.5s;
+    grid-template-areas:
+    "."
+    "links"
+    "social";
+    grid-template-rows: 50px 1fr 50px;
+    overflow: hidden;
+}
+
+.Menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+.Menu li {
+    margin: 0px 0 50px 0;
+}
+
+.Menu-link-container {
+    width: 200px;
+    grid-area: links;
+    align-self: center;
+    justify-self: center;
+}
+
+.Menu-footer {
+    grid-area: social;
+}
+
+.Menu-open {
+    width: 200px;
+}
+
+.Menu-link {
+    font-size: xx-large;
+    color: var(--main-bg-color);
+    text-decoration: none;
+}

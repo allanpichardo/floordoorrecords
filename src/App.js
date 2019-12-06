@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Toolbar from "./components/Toolbar";
+import Menu from './components/Menu';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import AlbumGrid from "./components/AlbumGrid";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isMenuOpen: false
+        };
+
+        this.handleMenuClicked = this.handleMenuClicked.bind(this);
+    }
+
+    handleMenuClicked(isOpen) {
+        this.setState({
+            isMenuOpen: isOpen
+        });
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <Toolbar isOpen={this.state.isMenuOpen} onMenuClicked={this.handleMenuClicked}/>
+                    <Menu isOpen={this.state.isMenuOpen}/>
+                </header>
+                <div className="App-content">
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/">
+                                <AlbumGrid />
+                            </Route>
+                        </Switch>
+                    </BrowserRouter>
+                </div>
+                <footer className="App-footer">
+                    Floordoor Records
+                </footer>
+            </div>
+        );
+    }
 }
-
-export default App;

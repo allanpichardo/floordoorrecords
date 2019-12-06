@@ -1,38 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+  --main-bg-color: #dddddd;
+  --secondary-bg-color: #222222;
+  --highlight-color: khaki;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: var(--main-bg-color);
+  color: var(--secondary-bg-color);
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 50px 1fr 40px;
+  grid-template-areas:
+  "head head head head"
+  "main main main main"
+  "foot foot foot foot";
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-area: head;
 }
 
-.App-link {
-  color: #61dafb;
+.App-content {
+  grid-area: main;
+  overflow: scroll;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-footer {
+  grid-area: foot;
+  justify-self: center;
+  align-self: center;
+}
+
+.signature {
+  align-self: center;
+  justify-self: end;
+  font-size: x-small;
 }
