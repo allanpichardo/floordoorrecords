@@ -1,0 +1,38 @@
+.ArtistGrid {
+    grid-gap: 0;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "cols arrow";
+    grid-template-columns: 1fr 25px;
+    grid-template-rows: 1fr;
+}
+
+.ArtistGrid-columns {
+    grid-area: cols;
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, 155px);*/
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, auto);
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.ArtistGrid-arrow {
+    grid-area: arrow;
+    align-self: center;
+    font-size: xx-large;
+}
+
+.ArtistGrid-arrow i {
+    animation: 0.5s infinite alternate arrowmovement;
+    font-size: xx-large;
+}
+
+@keyframes arrowmovement {
+    from {
+        margin-left: -1px;
+    }
+    to {
+        margin-left: 4px;
+    }
+}

@@ -1,0 +1,46 @@
+.Release {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-areas:
+    "title player"
+    "info player";
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px 20px;
+}
+
+@media screen and (max-width: 730px) {
+    .Release {
+        grid-template-areas:
+                "title"
+                "player"
+                "info";
+        grid-template-rows: 0.5fr 4fr 5fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .Release {
+        padding: 16px 5px;
+    }
+}
+
+.Release-title {
+    grid-area: title;
+    align-self: start;
+    justify-self: start;
+}
+
+.Release-info {
+    grid-area: info;
+    align-self: start;
+    justify-self: start;
+    white-space: pre-line;
+}
+
+.Release-player {
+    grid-area: player;
+    align-self: start;
+    justify-self: center;
+}

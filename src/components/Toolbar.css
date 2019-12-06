@@ -13,6 +13,15 @@
     cursor: pointer;
 }
 
+.Toolbar button:focus {
+    outline: none;
+}
+
+.Toolbar button:hover {
+    color: var(--highlight-color);
+    cursor: pointer;
+}
+
 .Toolbar-open{
     color: var(--main-bg-color);
 }

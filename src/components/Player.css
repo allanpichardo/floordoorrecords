@@ -1,0 +1,15 @@
+.Player {
+
+}
+
+.Player iframe {
+    border: 0;
+    width: 400px;
+    height: 700px;
+}
+
+@media screen and (max-width: 730px) {
+    .Player iframe {
+        width: 300px;
+    }
+}

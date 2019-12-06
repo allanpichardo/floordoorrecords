@@ -46,3 +46,11 @@
     color: var(--main-bg-color);
     text-decoration: none;
 }
+
+.Menu-link:hover {
+    color: var(--highlight-color);
+}
+
+.Menu-selected {
+    text-decoration: underline;
+}

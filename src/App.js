@@ -4,6 +4,8 @@ import Toolbar from "./components/Toolbar";
 import Menu from './components/Menu';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import AlbumGrid from "./components/AlbumGrid";
+import Release from "./components/Release";
+import ArtistGrid from "./components/ArtistGrid";
 
 export default class App extends React.Component {
 
@@ -31,11 +33,12 @@ export default class App extends React.Component {
                     <Menu isOpen={this.state.isMenuOpen}/>
                 </header>
                 <div className="App-content">
-                    <BrowserRouter>
+                    <BrowserRouter basename={process.env.PUBLIC_URL}>
                         <Switch>
-                            <Route exact path="/">
-                                <AlbumGrid />
-                            </Route>
+                            <Route exact path="/" render={props => (<AlbumGrid {...props}/>)}/>
+                            <Route exact path="/releases" render={props => (<AlbumGrid {...props}/>)}/>
+                            <Route path="/releases/:slug" render={props => (<Release {...props}/>)}/>
+                            <Route exact path="/artists" render={props => (<ArtistGrid {...props}/>)}/>
                         </Switch>
                     </BrowserRouter>
                 </div>

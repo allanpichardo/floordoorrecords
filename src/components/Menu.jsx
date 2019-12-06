@@ -29,11 +29,11 @@ export default class Menu extends React.Component {
             <div className={this.getOpenClass()}>
                 <div/>
                 <div className="Menu-link-container">
-                    <BrowserRouter>
+                    <BrowserRouter basename={process.env.PUBLIC_URL} forceRefresh={true}>
                         <ul>
-                            <li><NavLink to="/" className="Menu-link" activeClassName="Menu-selected">Releases</NavLink></li>
+                            <li><NavLink exact to="/" className="Menu-link" activeClassName="Menu-selected">Releases</NavLink></li>
                             <li><NavLink to="/artists" className="Menu-link" activeClassName="Menu-selected">Artists</NavLink></li>
-                            <li><NavLink to="/contact" className="Menu-link" activeClassName="Menu-selected">Contact</NavLink></li>
+                            <li><NavLink exact to="/contact" className="Menu-link" activeClassName="Menu-selected">Contact</NavLink></li>
                         </ul>
                     </BrowserRouter>
                 </div>

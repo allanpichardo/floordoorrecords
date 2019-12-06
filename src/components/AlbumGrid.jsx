@@ -1,6 +1,7 @@
 import React from 'react';
 import './AlbumGrid.css';
 import Album from "./Album";
+import Utils from "../lib/utils";
 
 export default class AlbumGrid extends React.Component {
 
@@ -19,13 +20,14 @@ export default class AlbumGrid extends React.Component {
     }
 
     fetchAlbumData() {
-        fetch('/data/albums.json')
-            .then((response) => {
-                return response.json()
-            }).then((data) => {
+        Utils.fetchAllAlbums((err, albums) => {
+            if(err) {
+                console.log(err);
+            } else {
                 this.setState({
-                    albumData: data
+                    albumData: albums
                 })
+            }
         });
     }
 
