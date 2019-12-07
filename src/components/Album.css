@@ -10,6 +10,12 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    transition: filter 0.5s;
+    filter: blur(0px);
+}
+
+.Album img:hover {
+    filter: blur(5px);
 }
 
 .Album-overlay {

@@ -31,3 +31,12 @@
     margin: 0 8px;
     color: var(--main-bg-color);
 }
+
+.Bio-overlay iframe {
+    border:none;
+    overflow:hidden;
+}
+
+.Bio-overlay div {
+    margin: 16px 0;
+}

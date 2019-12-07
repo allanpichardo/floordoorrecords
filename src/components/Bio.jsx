@@ -15,6 +15,7 @@ export default class Bio extends React.Component {
         this.getWebsiteLink = this.getWebsiteLink.bind(this);
         this.getFacebookLink = this.getFacebookLink.bind(this);
         this.getInstagramLink = this.getInstagramLink.bind(this);
+        this.getSpotifyLink = this.getSpotifyLink.bind(this);
     }
 
     componentDidMount() {
@@ -73,6 +74,22 @@ export default class Bio extends React.Component {
         }
     }
 
+    getSpotifyLink() {
+        if(this.state.artistData.spotify) {
+            let parts = this.state.artistData.spotify.split('/');
+            let id = parts[parts.length - 1];
+            return(
+                <iframe
+                    src={`https://open.spotify.com/follow/1/?uri=spotify:artist:${id}&size=basic&theme=light&show-count=0`}
+                    width="94" height="28" scrolling="no" frameBorder="0"
+                    allowtransparency="true">
+                </iframe>
+            )
+        } else {
+            return (<span/>);
+        }
+    }
+
     render() {
         if(this.state.artistData) {
             return(
@@ -80,6 +97,9 @@ export default class Bio extends React.Component {
                     <img src={this.state.artistData.other_image} alt={this.state.artistData.name}/>
                     <div className="Bio-overlay">
                         <h1>{this.state.artistData.name}</h1>
+                        <div>
+                            {this.getSpotifyLink()}
+                        </div>
                         <div>
                             {this.getWebsiteLink()}
                             {this.getFacebookLink()}
