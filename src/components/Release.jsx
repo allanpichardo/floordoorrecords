@@ -27,7 +27,7 @@ export default class Release extends React.Component {
             if(err) {
                 console.log(err);
             } else {
-                let album = Utils.findAlbumByName(albums, slug);
+                let album = Utils.findAlbumBySlug(albums, slug);
                 this.setState({
                     albumData: album
                 })

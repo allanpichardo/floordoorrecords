@@ -10,8 +10,8 @@
   },
   {
     "name": "My Love MHz",
-    "cover_image": "/img/mylovemhz2.jpg",
-    "other_image": "/img/mylovemhz1.png",
+    "cover_image": "/img/mylovemhz3.jpg",
+    "other_image": "/img/mylovemhz5.jpg",
     "website": "http://www.mylovemhz.com",
     "facebook": "https://www.facebook.com/mylovemhz/",
     "instagram": "https://www.instagram.com/mylovemhz",
@@ -38,7 +38,7 @@
   {
     "name": "Eternal Garb",
     "cover_image": "/img/eternalgarb1.jpg",
-    "other_image": null,
+    "other_image": "/img/eternalgarb1.jpg",
     "website": null,
     "facebook": null,
     "instagram":"https://www.instagram.com/eternalgarb",

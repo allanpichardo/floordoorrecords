@@ -6,6 +6,7 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 import AlbumGrid from "./components/AlbumGrid";
 import Release from "./components/Release";
 import ArtistGrid from "./components/ArtistGrid";
+import Bio from "./components/Bio";
 
 export default class App extends React.Component {
 
@@ -46,6 +47,7 @@ export default class App extends React.Component {
                                 <Route exact path="/releases" render={props => (<AlbumGrid {...props}/>)}/>
                                 <Route path="/releases/:slug" render={props => (<Release {...props}/>)}/>
                                 <Route exact path="/artists" render={props => (<ArtistGrid {...props}/>)}/>
+                                <Route path="/artists/:slug" render={props => (<Bio {...props}/>)}/>
                             </Switch>
                     </div>
                     <footer className="App-footer">

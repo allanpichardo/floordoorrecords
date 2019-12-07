@@ -1,3 +1,5 @@
+import slugify from "slugify";
+
 export default class Utils {
 
     static fetchAllAlbums(callback) {
@@ -20,6 +22,25 @@ export default class Utils {
         }).catch(e  => {
             callback(e);
         });
+    }
+
+
+    static findAlbumBySlug(albums, slug) {
+        for(let i = 0; i < albums.length; i++) {
+            if(slugify(albums[i].title) === slug) {
+                return albums[i];
+            }
+        }
+        return null;
+    }
+
+    static findArtistBySlug(artists, slug) {
+        for(let i = 0; i < artists.length; i++) {
+            if(slugify(artists[i].name) === slug) {
+                return artists[i];
+            }
+        }
+        return null;
     }
 
     /**

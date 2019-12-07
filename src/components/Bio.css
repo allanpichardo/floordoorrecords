@@ -1,0 +1,33 @@
+.Bio {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.Bio img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+}
+
+.Bio-overlay {
+    position: absolute;
+    padding: 100px 24px 24px 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-bg-color);
+    opacity: 0.9;
+    color: var(--main-bg-color);
+    text-align:center;
+    overflow-y: scroll;
+}
+
+.Bio-overlay i {
+    font-size: xx-large;
+    margin: 0 8px;
+    color: var(--main-bg-color);
+}
