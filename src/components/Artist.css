@@ -1,14 +1,31 @@
 .Artist {
+    position: relative;
     width: 200px;
-    transition: width 0.5s;
+    transition: width 0.25s;
+    z-index: 0;
 }
 
 .Artist:hover {
-    width: 455px;
+    width: 355px;
+    z-index: 1;
 }
 
 .Artist img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.Artist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-bg-color);
+    opacity: 0.5;
+    color: var(--main-bg-color);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    padding-top: 8px;
 }

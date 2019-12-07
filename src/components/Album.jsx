@@ -1,6 +1,6 @@
 import React from 'react';
 import './Album.css';
-import {BrowserRouter, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import slugify from 'slugify';
 
 export default class Album extends React.Component {
@@ -8,7 +8,6 @@ export default class Album extends React.Component {
     render() {
         return (
             <div className="Album" >
-                <BrowserRouter basename={process.env.PUBLIC_URL}/>
                 <Link to={`/releases/${slugify(this.props.albumData.title)}`}>
                     <img src={this.props.albumData.image} alt={this.props.albumData.title}/>
                     <div className="Album-overlay" >

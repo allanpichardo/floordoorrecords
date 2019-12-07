@@ -1,6 +1,6 @@
 import React from 'react';
 import './Menu.css';
-import {BrowserRouter, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export default class Menu extends React.Component {
 
@@ -16,6 +16,14 @@ export default class Menu extends React.Component {
         return this.state.isOpen ? 'Menu Menu-open' : 'Menu';
     }
 
+    componentDidMount() {
+        window.addEventListener('click', (e) => {
+            if (this.state.isOpen && !document.querySelector('.Menu').contains(e.target) && e.target.className !== 'material-icons'){
+                this.props.onMenuItemClicked();
+            }
+        });
+    }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(this.props.isOpen !== prevProps.isOpen) {
             this.setState({
@@ -29,13 +37,11 @@ export default class Menu extends React.Component {
             <div className={this.getOpenClass()}>
                 <div/>
                 <div className="Menu-link-container">
-                    <BrowserRouter basename={process.env.PUBLIC_URL} forceRefresh={true}>
-                        <ul>
-                            <li><NavLink exact to="/" className="Menu-link" activeClassName="Menu-selected">Releases</NavLink></li>
-                            <li><NavLink to="/artists" className="Menu-link" activeClassName="Menu-selected">Artists</NavLink></li>
-                            <li><NavLink exact to="/contact" className="Menu-link" activeClassName="Menu-selected">Contact</NavLink></li>
-                        </ul>
-                    </BrowserRouter>
+                    <ul>
+                        <li><NavLink exact to="/" className="Menu-link" activeClassName="Menu-selected" onClick={this.props.onMenuItemClicked}>Releases</NavLink></li>
+                        <li><NavLink to="/artists" className="Menu-link" activeClassName="Menu-selected" onClick={this.props.onMenuItemClicked}>Artists</NavLink></li>
+                        <li><NavLink exact to="/contact" className="Menu-link" activeClassName="Menu-selected" onClick={this.props.onMenuItemClicked}>Contact</NavLink></li>
+                    </ul>
                 </div>
                 <div className="Menu-footer">
                 </div>
