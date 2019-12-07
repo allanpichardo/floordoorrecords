@@ -44,6 +44,7 @@ export default class Menu extends React.Component {
                     </ul>
                 </div>
                 <div className="Menu-footer">
+                    <a href="https://www.allanpichardo.com" target="_blank" rel="noopener noreferrer">{'design by My <3 MHz'}</a>
                 </div>
             </div>
         );

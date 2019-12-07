@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Toolbar.css';
 import logo from '../img/floordoor_logo.svg';
+import {Link} from "react-router-dom";
 
 export default class Toolbar extends Component {
 
@@ -55,7 +56,17 @@ export default class Toolbar extends Component {
                     {this.getIcon()}
                 </button>
                 <div className="Toolbar-title">
-                    <img src={logo} alt="logo"/>
+                    <Link to="/">
+                        <img src={logo} alt="logo"/>
+                    </Link>
+                </div>
+                <div className="Toolbar-social">
+                    <a href="https://www.facebook.com/floordoorrecords" target="_blank" rel="noopener noreferrer">
+                        <i className="ion-logo-facebook"/>
+                    </a>
+                    <a href="https://www.instagram.com/floordoorrecords" target="_blank" rel="noopener noreferrer">
+                        <i className="ion-logo-instagram"/>
+                    </a>
                 </div>
             </div>
         );

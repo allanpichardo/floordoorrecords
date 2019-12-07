@@ -11,7 +11,7 @@
     grid-template-areas:
     "."
     "links"
-    "social";
+    "signature";
     grid-template-rows: 50px 1fr 50px;
     overflow: hidden;
 }
@@ -34,7 +34,17 @@
 }
 
 .Menu-footer {
-    grid-area: social;
+    grid-area: signature;
+    color: var(--main-bg-color);
+    font-size: xx-small;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 16px;
+}
+
+.Menu-footer a {
+    color: var(--main-bg-color);
+    text-decoration: none;
 }
 
 .Menu-open {

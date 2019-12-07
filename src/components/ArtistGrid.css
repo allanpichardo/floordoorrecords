@@ -1,10 +1,6 @@
 .ArtistGrid {
-    grid-gap: 0;
     height: 100%;
-    display: grid;
-    grid-template-areas: "cols arrow";
-    grid-template-columns: 1fr 25px;
-    grid-template-rows: 1fr;
+    position: relative;
 }
 
 .ArtistGrid-columns {
@@ -14,12 +10,25 @@
     grid-auto-columns: minmax(190px, auto);
     overflow-x: scroll;
     overflow-y: hidden;
+    height: 100%;
 }
 
 .ArtistGrid-arrow {
+    position: absolute;
     grid-area: arrow;
     align-self: center;
     font-size: xx-large;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    color: var(--main-bg-color);
+    vertical-align: middle;
+    margin-bottom: 48px;
+}
+
+.ArtistGrid-arrow i {
+    display: inline;
+    vertical-align: middle;
 }
 
 .ArtistGrid-arrow i {
@@ -29,9 +38,9 @@
 
 @keyframes arrowmovement {
     from {
-        margin-left: -1px;
+        margin-right: 0px;
     }
     to {
-        margin-left: 4px;
+        margin-right: 4px;
     }
 }
