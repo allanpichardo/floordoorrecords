@@ -6,7 +6,7 @@ export default class Player extends React.Component {
     render() {
         return(
             <div className="Player">
-                <iframe title={this.props.title} src={`https://bandcamp.com/EmbeddedPlayer/album=${this.props.albumId}/size=large/bgcol=ffffff/linkcol=333333/package=${this.props.merchId ? this.props.merchId : ''}/transparent=true/`} seamless/>
+                <iframe title={this.props.title} src={`https://bandcamp.com/EmbeddedPlayer/album=${this.props.albumId}/size=large/bgcol=ffffff/linkcol=9d91c3/package=${this.props.merchId ? this.props.merchId : ''}/transparent=true/`} seamless/>
             </div>
         )
     }

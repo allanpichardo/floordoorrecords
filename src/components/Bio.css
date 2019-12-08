@@ -5,7 +5,7 @@
     width: 100%;
 }
 
-.Bio img {
+.Bio-background{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -37,6 +37,6 @@
     overflow:hidden;
 }
 
-.Bio-overlay div {
+.Bio-overlay-section {
     margin: 16px 0;
 }

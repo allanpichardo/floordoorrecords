@@ -32,6 +32,15 @@
     justify-self: start;
 }
 
+.Release-title a {
+    text-decoration: none;
+    color: var(--highlight-inverse-color);
+}
+
+.Release-title a:hover {
+    text-decoration: underline;
+}
+
 .Release-info {
     grid-area: info;
     align-self: start;

@@ -2,7 +2,8 @@ import React from 'react';
 import Utils from "../lib/utils";
 import './Release.css';
 import Player from "./Player";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import slugify from "slugify";
 
 export default class Release extends React.Component {
 
@@ -41,7 +42,9 @@ export default class Release extends React.Component {
                 <div className="Release">
                     <div className="Release-title">
                         <h1>{this.state.albumData.title}</h1>
-                        <h3>{this.state.albumData.artist}</h3>
+                        <Link to={`/artists/${slugify(this.state.albumData.artist)}`}>
+                            <h3>{this.state.albumData.artist}</h3>
+                        </Link>
                     </div>
                     <div className="Release-info">
                         <p>{this.state.albumData.notes}</p>

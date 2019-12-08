@@ -1,6 +1,7 @@
 import React from 'react';
 import './Bio.css';
 import Utils from "../lib/utils";
+import AlbumGrid from "./AlbumGrid";
 
 export default class Bio extends React.Component {
 
@@ -8,7 +9,8 @@ export default class Bio extends React.Component {
         super(props);
 
         this.state = {
-            artistData: this.props.artistData
+            artistData: this.props.artistData,
+            albums: this.props.albums
         };
 
         this.fetchData = this.fetchData.bind(this);
@@ -24,6 +26,24 @@ export default class Bio extends React.Component {
         }
     }
 
+    fetchAlbumData() {
+        Utils.fetchAllAlbums((err, albums) => {
+            if(err) {
+                console.log(err);
+            } else {
+                let specificAlbums = [];
+                albums.forEach(album => {
+                    if(album.artist === this.state.artistData.name) {
+                        specificAlbums.push(album);
+                    }
+                });
+                this.setState({
+                    albums: specificAlbums
+                })
+            }
+        })
+    }
+
     fetchData() {
         let slug = this.props.match.params.slug;
         Utils.fetchAllArtists((err, artists) => {
@@ -33,6 +53,8 @@ export default class Bio extends React.Component {
                 let artist = Utils.findArtistBySlug(artists, slug);
                 this.setState({
                     artistData: artist
+                }, () => {
+                    this.fetchAlbumData();
                 })
             }
         });
@@ -81,7 +103,7 @@ export default class Bio extends React.Component {
             return(
                 <iframe
                     src={`https://open.spotify.com/follow/1/?uri=spotify:artist:${id}&size=basic&theme=light&show-count=0`}
-                    width="94" height="28" scrolling="no" frameBorder="0"
+                    width="94" height="28" scrolling="no" frameBorder="0" title={this.state.artistData.name}
                     allowtransparency="true">
                 </iframe>
             )
@@ -94,19 +116,22 @@ export default class Bio extends React.Component {
         if(this.state.artistData) {
             return(
                 <div className="Bio">
-                    <img src={this.state.artistData.other_image} alt={this.state.artistData.name}/>
+                    <img className="Bio-background" src={this.state.artistData.other_image} alt={this.state.artistData.name}/>
                     <div className="Bio-overlay">
                         <h1>{this.state.artistData.name}</h1>
-                        <div>
+                        <div className="Bio-overlay-section">
                             {this.getSpotifyLink()}
                         </div>
-                        <div>
+                        <div className="Bio-overlay-section">
                             {this.getWebsiteLink()}
                             {this.getFacebookLink()}
                             {this.getInstagramLink()}
                         </div>
-                        <div>
+                        <div className="Bio-overlay-section">
                             <p>{this.state.artistData.notes}</p>
+                        </div>
+                        <div className="Bio-overlay-section">
+                            {this.state.albums ? <AlbumGrid albumData={this.state.albums}/> : <span/>}
                         </div>
                     </div>
                 </div>

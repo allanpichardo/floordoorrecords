@@ -9,14 +9,16 @@ export default class AlbumGrid extends React.Component {
         super(props);
 
         this.state = {
-            albumData: []
+            albumData: this.props.albumData
         };
 
         this.fetchAlbumData = this.fetchAlbumData.bind(this);
     }
 
     componentDidMount() {
-        this.fetchAlbumData();
+        if(!this.state.albumData) {
+            this.fetchAlbumData();
+        }
     }
 
     fetchAlbumData() {
@@ -32,15 +34,19 @@ export default class AlbumGrid extends React.Component {
     }
 
     render() {
-        let albumData = this.state.albumData.slice();
-        return (
-            <div className="AlbumGrid">
-                {
-                    albumData.map((album) => {
-                        return (<Album albumData={album} key={album.title}/>);
+        if(this.state.albumData) {
+            let albumData = this.state.albumData.slice();
+            return (
+                <div className="AlbumGrid">
+                    {
+                        albumData.map((album) => {
+                            return (<Album albumData={album} key={album.title}/>);
                         })
-                }
-            </div>
-        )
+                    }
+                </div>
+            )
+        } else {
+            return (<div/>)
+        }
     }
 }
