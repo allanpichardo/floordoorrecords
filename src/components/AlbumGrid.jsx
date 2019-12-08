@@ -2,6 +2,7 @@ import React from 'react';
 import './AlbumGrid.css';
 import Album from "./Album";
 import Utils from "../lib/utils";
+import {Helmet} from "react-helmet";
 
 export default class AlbumGrid extends React.Component {
 
