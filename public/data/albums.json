@@ -1,5 +1,21 @@
 [
   {
+    "artist": "Supplier",
+    "title": "Supplier II",
+    "image": "https://f4.bcbits.com/img/a1229967221_16.jpg",
+    "bandcamp_url": "https://supplier.bandcamp.com/album/supplier-ii",
+    "bandcamp_id": 948485490,
+    "notes": "Released January 1, 2020."
+  },
+  {
+    "artist": "Eternal Garb",
+    "title": "Perishable",
+    "image": "https://f4.bcbits.com/img/a0527825202_16.jpg",
+    "bandcamp_url": "https://eternalgarb.bandcamp.com/album/perishable",
+    "bandcamp_id": 1112454215,
+    "notes": "Released December 13, 2019."
+  },
+  {
     "artist": "underorder",
     "title": "Other Ways to be Apart, Volume 1",
     "image": "https://f4.bcbits.com/img/a4075427056_16.jpg",
